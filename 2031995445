@@ -1,35 +1,36 @@
 local HUDMAP = {}
-HUDMAP.Map = "gm_construct"
-HUDMAP.Material = "models/paris/gm_construct/gm_construct_main"
-HUDMAP.PlanarScale = 275
-HUDMAP.EditorScale = 0.262
-HUDMAP.Translate = Vector(-170,155,0) // Never do Z
+HUDMAP.Map = "gm_flatgrass"
+HUDMAP.Material = "models/paris/gm_flatgrass/gm_flatgrass"
+HUDMAP.PlanarScale = 790
 
 HUDMAP.UseZones = true
 HUDMAP.Zones = {}
 HUDMAP.Zones["MAIN"] = {
-    Material = "models/paris/gm_construct/gm_construct_main",
-    PlanarScale = 275,
-    Translate = Vector(-170,155,0),
+    Material = "models/paris/gm_flatgrass/gm_flatgrass",
+    PlanarScale = 790,
+    Translate = Vector(0,0,0),
 }
-HUDMAP.Zones["LOWER"] = {
-    Material = "models/paris/gm_construct/gm_construct_below",
-    PlanarScale = 275,
-    Translate = Vector(-170,155,0),
+HUDMAP.Zones["UNDERPASS"] = {
+    Material = "models/paris/gm_flatgrass/gm_flatgrass_underpass",
+    PlanarScale = 790,
+    Translate = Vector(0,0,0),
     InsideZones = {
-        {Vector(-5640,-3045,178),
-        Vector(-3248,-1056,-180)},
-        {Vector(-1200,96,-516),
-        Vector(-3288,-4568,-196)},
-        {Vector(-3248,-1866,-144),
-        Vector(-3120,-1121,-32)},
-        {Vector(-3120,-1520,-32),
-        Vector(-2879,-1424,-144)},
-        {Vector(-808,-4568,152),
-        Vector(-1256,-2632,-260)},
+        {Vector(-418,-992,-12420),
+        Vector(421,1026,-12850)},
     },
+    Zoom = 0.5
 }
 
+HUDMAP.Zones["SECRET"] = {
+    Material = "models/paris/gm_flatgrass/gm_flatgrass_secret",
+    PlanarScale = 790,
+    Translate = Vector(0,0,0),
+    InsideZones = {
+        {Vector(-417,-448,-12560),
+        Vector(-992,448,-12800)},
+    },
+    Zoom = 0.2
+}
 
 
 paris = paris or {}                     // Register Prep
@@ -37,5 +38,6 @@ if !paris.HUDMaps then
     paris.HUDMaps = {}
 end
 paris.HUDMaps[HUDMAP.Map] = HUDMAP      // Registers the hudmap
+
 
 print("Loading HudMap .." .. HUDMAP.Map)
