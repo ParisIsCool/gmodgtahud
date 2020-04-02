@@ -1,0 +1,14 @@
+local HUDMAP = {}
+HUDMAP.Map = "rp_rockford_v2b"
+HUDMAP.Material = "models/paris/rp_rockford_v2b/rp_rockford_v2b"
+HUDMAP.PlanarScale = 790
+HUDMAP.EditorScale = 0.262
+
+paris = paris or {}                     // Register Prep
+if !paris.HUDMaps then
+    paris.HUDMaps = {}
+end
+paris.HUDMaps[HUDMAP.Map] = HUDMAP      // Registers the hudmap
+
+
+print("Loading HudMap .." .. HUDMAP.Map)
