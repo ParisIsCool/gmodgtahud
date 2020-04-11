@@ -1,0 +1,36 @@
+local HUDMAP = {}
+HUDMAP.Map = "rp_evocity_v4b1"
+HUDMAP.Material = "models/paris/rp_evocity_v4b1/rp_evocity_v4b1"
+HUDMAP.PlanarScale = 768
+HUDMAP.Translate = Vector(-46,30,0) // Never do Z
+HUDMAP.Zoom = 0.3
+
+HUDMAP.UseZones = true
+HUDMAP.Zones = {}
+HUDMAP.Zones["MAIN"] = {
+    Material = "models/paris/rp_evocity_v4b1/rp_evocity_v4b1",
+    PlanarScale = 768,
+    Translate = Vector(-46,30,0), // Never do Z
+    Zoom = 0.9,
+}
+
+HUDMAP.Zones["POLICE"] = {
+    Material = "models/paris/rp_evocity_v4b1/rp_evocity_v4b1_police",
+    PlanarScale = 768,
+    Translate = Vector(-46,30,0), // Never do Z
+    InsideZones = {
+        {Vector(-8112,-10649,-32),
+        Vector(-6214,-8600,-459)},
+    },
+    Zoom = 0.3
+}
+
+
+paris = paris or {}                     // Register Prep
+if !paris.HUDMaps then
+    paris.HUDMaps = {}
+end
+paris.HUDMaps[HUDMAP.Map] = HUDMAP      // Registers the hudmap
+
+
+print("Loading HudMap .." .. HUDMAP.Map)
