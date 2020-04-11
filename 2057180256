@@ -1,0 +1,14 @@
+local HUDMAP = {}
+HUDMAP.Map = "rp_downtown_v4c_v2"
+HUDMAP.Material = "models/paris/rp_downtown_v4c_v2/rp_downtown_v4c_v2"
+HUDMAP.PlanarScale = 590
+HUDMAP.Translate = Vector(358,-210,0) // Never do Z
+HUDMAP.Zoom = 0.3
+
+paris = paris or {}                     // Register Prep
+if !paris.HUDMaps then
+    paris.HUDMaps = {}
+end
+paris.HUDMaps[HUDMAP.Map] = HUDMAP      // Registers the hudmap
+
+print("Loading HudMap .." .. HUDMAP.Map)
